@@ -1,1 +1,2 @@
-<router-outlet></router-outlet>
+<router-outlet *ngIf="!isWrongNetwork"></router-outlet>
+<p *ngIf="isWrongNetwork">Selected network is not supported. Please, switch to {{ supportedNetwork.name }}.</p>
