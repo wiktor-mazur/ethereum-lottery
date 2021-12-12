@@ -18,7 +18,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.chainSubscription = this.web3.chain$.subscribe((network) => {
-      console.log(network)
       this.isWrongNetwork = this.supportedNetwork.id !== network;
     });
   }

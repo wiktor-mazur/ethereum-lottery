@@ -1,3 +1,6 @@
+<h1>Lottery</h1>
+
+<h2>Account details</h2>
 <table>
   <tr>
     <th>Account</th>
@@ -5,6 +8,35 @@
   </tr>
   <tr>
     <td>{{ account }}</td>
-    <td>{{ balance }}</td>
+    <td>{{ balance }} ETH</td>
+</table>
+
+<h2>Lottery details</h2>
+<table>
+  <tr>
+    <th>Lottery balance</th>
+    <th>Lottery manager address</th>
+    <th>Max lottery players</th>
+    <th>Lottery players</th>
+  </tr>
+  <tr>
+    <td>{{ lottery?.balance }} ETH</td>
+    <td>{{ lottery?.managerAddress }}</td>
+    <td>{{ lottery?.maxPlayers }}</td>
+    <td>
+      <ul *ngIf="lottery?.players">
+        <li *ngFor="let player of lottery?.players">
+          {{ player }}
+        </li>
+      </ul>
+    </td>
   </tr>
 </table>
+
+<h2>Winners history</h2>
+
+<ul *ngIf="winnersHistory && winnersHistory.length">
+  <li *ngFor="let winner of winnersHistory">
+    {{ winner.address }} / {{ winner.prize }} ETH
+  </li>
+</ul>

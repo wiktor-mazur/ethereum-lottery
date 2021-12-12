@@ -55,4 +55,8 @@ export class Web3Service {
   get eth() {
     return this.web3.eth;
   }
+
+  get utils() {
+    return this.web3.utils;
+  }
 }

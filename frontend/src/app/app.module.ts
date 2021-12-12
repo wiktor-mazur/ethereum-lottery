@@ -7,6 +7,7 @@ import { HomeComponent } from './views/home/home.component';
 import { NotSupportedComponent } from './views/not-supported/not-supported.component';
 import { Web3Service } from './services/web3.service';
 import { Web3AuthenticatedGuard } from './guards/web3-authenticated.guard';
+import { LotteryService } from './services/lottery.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { Web3AuthenticatedGuard } from './guards/web3-authenticated.guard';
   ],
   providers: [
     Web3AuthenticatedGuard,
-    Web3Service
+    Web3Service,
+    LotteryService
   ],
   bootstrap: [AppComponent]
 })
